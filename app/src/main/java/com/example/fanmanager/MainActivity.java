@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/// current CPU temp
+/// current CPU temp request every n sec.
         CpuTempHandler.postDelayed(CpuTempTextPrintRunnable, 0);
 /// spinners start
         Spinner spin_min = findViewById(R.id.spinner_min);
