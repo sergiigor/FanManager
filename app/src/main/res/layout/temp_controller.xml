@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    tools:context=".MainActivity"
+    android:id="@+id/temp_control_unit">
+
+    <View android:id="@+id/middle"
+        android:layout_height="0dp"
+        android:layout_width="0sp"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/set_temp_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="100sp"
+        android:layout_marginTop="40sp"
+        android:fontFamily="@font/chakra_petch_semibold"
+        android:gravity="center"
+        android:text="@string/set_temp"
+        android:textColor="@color/white"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/set_min_temp"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/set_temp_logo"
+        android:layout_alignEnd="@id/middle"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="100sp"
+        android:layout_marginTop="40sp"
+        android:fontFamily="@font/chakra_petch_semibold"
+        android:text="@string/min_temp"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+
+    <Spinner
+        android:id="@+id/spinner_min"
+        android:layout_width="100sp"
+        android:layout_height="50sp"
+        android:layout_below="@id/set_temp_logo"
+        android:layout_alignEnd="@id/middle"
+        android:layout_marginTop="40sp"
+        android:padding="0dip"
+        android:layout_marginEnd="100sp"
+        android:prompt="@string/spinner_title"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/set_max_temp"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/set_temp_logo"
+        android:layout_alignStart="@id/middle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="100sp"
+        android:layout_marginTop="40sp"
+        android:fontFamily="@font/chakra_petch_semibold"
+        android:text="@string/max_temp"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
+
+    <Spinner
+        android:id="@+id/spinner_max"
+        android:layout_width="100sp"
+        android:layout_height="50sp"
+        android:layout_below="@id/set_temp_logo"
+        android:layout_alignParentStart="@id/middle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40sp"
+        android:padding="0dip"
+        android:layout_marginEnd="100sp"
+        android:prompt="@string/spinner_title"
+        android:spinnerMode="dropdown" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:layout_below="@id/set_temp_logo"
+        android:layout_marginHorizontal="400sp"
+        android:layout_marginTop="200sp"
+        android:background="@drawable/round_btn"
+        android:fontFamily="@font/chakra_petch_semibold"
+        android:text="@string/btn_apply"
+        android:textSize="26sp" />
+
+</RelativeLayout>

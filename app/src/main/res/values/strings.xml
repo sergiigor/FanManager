@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Fan Manager</string>
+    <string name="main_title">Temperature control widget</string>
+    <string name="cur_temp">Current CPU temperature :</string>
+    <string name="fake_temp">--</string>
+    <string name="enable_switch">Enable control</string>
+    <string name="set_temp">Set temperature range</string>
+    <string name="min_temp">Min.</string>
+    <string name="max_temp">Max.</string>
+    <string name="btn_apply">Apply</string>
+    <string name="always_on">Fan status: always ON</string>
+    <string name="spinner_title">select temp</string>
+    <string-array name="temp_array">
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+    </string-array>
+</resources>
