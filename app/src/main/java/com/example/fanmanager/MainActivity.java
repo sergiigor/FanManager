@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         public void run() {
             TextView textView = (TextView) findViewById(R.id.cur_temp_value);
             textView.setText("55 C");
-            Toast.makeText(getApplicationContext(), "getcputemp_will be", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "get_cputemp_will be here", Toast.LENGTH_SHORT).show();
             CpuTempHandler.postDelayed(this, 10000); // Run again after 1 second
         }
     };
