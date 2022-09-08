@@ -13,6 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private SwitchCompat enable_control_switch;
@@ -69,11 +74,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         public void run() {
             TextView textView = (TextView) findViewById(R.id.cur_temp_value);
             textView.setText("55 C");
-            Toast.makeText(getApplicationContext(), "get_cputemp_will be here", Toast.LENGTH_SHORT).show();
-            CpuTempHandler.postDelayed(this, 10000); // Run again after 1 second
+            Toast.makeText(getApplicationContext(), "CPU temp: " + cpuTemperature(), Toast.LENGTH_SHORT).show();
+            CpuTempHandler.postDelayed(this, 5000); // Run again after 1 second
         }
     };
 ///
+    public static float cpuTemperature()
+    {
+        Process process;
+        try {
+            process = Runtime.getRuntime().exec("cat /sys/class/thermal/thermal_zone0/temp");
+            process.waitFor();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line = reader.readLine();
+            if(line!=null) {
+                float temp = Float.parseFloat(line);
+                return temp / 1000.0f;
+            }else{
+                return 999f;
+            }
+        }
+        catch (FileNotFoundException exception) {
+            return 404f;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return 505f;
+        }
+    }
      @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         int id = adapterView.getId();
